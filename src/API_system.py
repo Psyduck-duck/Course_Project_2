@@ -36,7 +36,7 @@ class ApiConnectionHHRU(ApiConnection):
         }
         self.__search_target = None
         self.__vacancies = []
-        self.is_connecting = False
+        self.__is_connecting = False
 
     def connect(self):
         pass
@@ -46,13 +46,13 @@ class ApiConnectionHHRU(ApiConnection):
         response = requests.get("https://api.hh.ru", self.__headers)
         if response.status_code != 200:
             raise ValueError("Check URL or headers")
-        self.is_connecting = True
+        self.__is_connecting = True
 
     def get_vacancy_data(self, search_text: str, per_page: int) -> list:
         """Метод для получения вакансий"""
 
         self.__connect_HHRU()
-        if self.is_connecting:
+        if self.__is_connecting:
             self.__headers["text"] = search_text
             self.__headers["per_page"] = per_page
             while self.__headers.get("page") != 20:
