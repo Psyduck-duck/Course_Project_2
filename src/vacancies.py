@@ -100,17 +100,18 @@ class VacancyHHRU(Vacancy):
     def __validation_salary_currency(self, vacancy_dict):
         """Метод для валидации валюты зарплаты"""
 
-        if vacancy_dict.get("salary").get("currency"):
-            salary_currency = vacancy_dict.get("salary").get("currency")
-            if type(salary_currency) == str:
-                return salary_currency
-            raise TypeError("currency must be str")
+        if vacancy_dict.get("salary"):
+            if vacancy_dict.get("salary").get("currency"):
+                salary_currency = vacancy_dict.get("salary").get("currency")
+                if type(salary_currency) == str:
+                    return salary_currency
+                raise TypeError("currency must be str")
         return None
 
     def __validation_url(self, vacancy_dict):
         """Метод для валидации url вакансии"""
 
-        pattern = re.compile(r"\bhttps?://www\..+\..+\b")
+        pattern = re.compile(r"\bhttps?://.+\..+\b")
         matches = re.findall(pattern, vacancy_dict.get("alternate_url"))
         if matches:
             return matches[0]
