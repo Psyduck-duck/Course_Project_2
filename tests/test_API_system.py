@@ -1,8 +1,9 @@
-from src.API_system import ApiConnectionHHRU, ApiConnection
+from unittest.mock import patch
+
 import pytest
 import requests
 
-from unittest.mock import patch
+from src.API_system import ApiConnection, ApiConnectionHHRU
 
 
 @pytest.fixture
@@ -27,8 +28,7 @@ def test_ApiConnectionHHRU_get_vacancy_data(mock_get):
 def test_ApiConnectionHHRU_get_vacancy_data_invalid_status_code(mock_get):
     example_obj = ApiConnectionHHRU()
     mock_get.return_value.status_code = 500
-    #mock_get.return_value.json.return_value = {"items": "1"}
-    #result = list("1" * 20)
+    # mock_get.return_value.json.return_value = {"items": "1"}
+    # result = list("1" * 20)
     with pytest.raises(ValueError):
         example_obj.get_vacancy_data("test", 1)
-

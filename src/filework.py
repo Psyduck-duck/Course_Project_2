@@ -1,8 +1,7 @@
-import os.path
-from abc import ABC, abstractmethod
-import re
-
 import json
+import os.path
+import re
+from abc import ABC, abstractmethod
 
 from data.path_to_directory import PATH_TO_DATA_DIRECTORY
 
@@ -34,8 +33,7 @@ class FileWorker(ABC):
 class FileWorkerJson(FileWorker):
     """класс для работы с файлом типа json"""
 
-
-    def __init__(self, filename = "filename.json"):
+    def __init__(self, filename="filename.json"):
         """Конструктор для задачи параметров объекта"""
 
         self.__filename = filename
@@ -108,7 +106,6 @@ class FileWorkerJson(FileWorker):
 
         return mathed_vacancies_list
 
-
     def add_data(self, vacancy_object):
         """метод для добавления уникальной вакансии"""
 
@@ -117,19 +114,19 @@ class FileWorkerJson(FileWorker):
                 with open(self.__path_to_file, "r+", encoding="utf-8") as file:
 
                     vacancy_object_dict = {
-        "id": vacancy_object.id,
-        "name": vacancy_object.name,
-        "salary": {
-            "from": vacancy_object.salary_down,
-            "to": vacancy_object.salary_up,
-            "currency": vacancy_object.salary_currency,
-        },
-        "alternate_url": vacancy_object.url,
-        "snippet": {
-            "requirement": vacancy_object.requirement,
-            "responsibility": vacancy_object.responsibility
-        },
-    }
+                        "id": vacancy_object.id,
+                        "name": vacancy_object.name,
+                        "salary": {
+                            "from": vacancy_object.salary_down,
+                            "to": vacancy_object.salary_up,
+                            "currency": vacancy_object.salary_currency,
+                        },
+                        "alternate_url": vacancy_object.url,
+                        "snippet": {
+                            "requirement": vacancy_object.requirement,
+                            "responsibility": vacancy_object.responsibility,
+                        },
+                    }
                     self.__vacancy_data.append(vacancy_object_dict)
                     json.dump(self.__vacancy_data, file, indent=4, ensure_ascii=False)
                     self.__id_list.append(vacancy_object.id)
@@ -137,7 +134,6 @@ class FileWorkerJson(FileWorker):
                 return False
         else:
             print("Create file!")
-
 
     def del_data(self):
         pass

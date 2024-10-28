@@ -1,19 +1,18 @@
 import re
-
 from abc import ABC, abstractmethod
 
 
 class Vacancy(ABC):
     """Абстрактный класс для работы с вакансиями"""
 
-    __slots__ = ("name", "salary_down", "salary_up", "salary_currency", "url", "requirement", "responsibility")
+    __slots__ = ("id", "name", "salary_down", "salary_up", "salary_currency", "url", "requirement", "responsibility")
 
     @abstractmethod
     def __init__(self):
         pass
 
     @abstractmethod
-    def __lt__(self, other):  #Больше или равно
+    def __lt__(self, other):  # Больше или равно
         pass
 
     @abstractmethod
@@ -35,6 +34,7 @@ class VacancyHHRU(Vacancy):
     def __init__(self, vacancy_dict: dict):
         """Конструктор для определния основных атрибутов"""
 
+        self.id = self.__validation_id(vacancy_dict)
         self.name = self.__validation_name(vacancy_dict)
         self.salary_down, self.salary_up = self.__validation_salary(vacancy_dict)
         self.salary_currency = self.__validation_salary_currency(vacancy_dict)
@@ -73,6 +73,17 @@ class VacancyHHRU(Vacancy):
             result = True
         return result
 
+    def __validation_id(self, vacancy_dict):
+        """метод для валидации id вакансии"""
+
+        if vacancy_dict.get("id"):
+            id = vacancy_dict.get("id")
+            if type(id) == str:
+                return id
+            raise TypeError("id must be str")
+
+        raise ValueError("id not found")
+
     def __validation_name(self, vacancy_dict):
         """Метод для валидации имени"""
 
@@ -90,7 +101,7 @@ class VacancyHHRU(Vacancy):
         if vacancy_dict.get("salary"):
             salary_down = vacancy_dict.get("salary").get("from")
             salary_up = vacancy_dict.get("salary").get("to")
-            #salary_currency = vacancy_dict.get("salary").get("currency")
+            # salary_currency = vacancy_dict.get("salary").get("currency")
             if type(salary_up) == int and type(salary_down) == int:
                 return salary_down, salary_up
             raise TypeError("salary must be int")
@@ -128,4 +139,3 @@ class VacancyHHRU(Vacancy):
             raise TypeError("requirement and responsibility must be str")
 
         raise ValueError("snippet nor detected")
-

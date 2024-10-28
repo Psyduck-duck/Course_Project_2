@@ -6,6 +6,7 @@ from src.vacancies import VacancyHHRU
 @pytest.fixture
 def some_vacancy_dict():
     return {
+        "id": "1",
         "name": "test",
         "salary": {
             "from": 1,
@@ -13,15 +14,13 @@ def some_vacancy_dict():
             "currency": "test",
         },
         "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        },
+        "snippet": {"requirement": "test", "responsibility": "test"},
     }
 
 
 def test_VacancyHHRU(some_vacancy_dict):
     object = VacancyHHRU(some_vacancy_dict)
+    assert object.id == "1"
     assert object.name == "test"
     assert object.salary_down == 1
     assert object.salary_up == 2
@@ -29,6 +28,15 @@ def test_VacancyHHRU(some_vacancy_dict):
     assert object.url == "https://test.ru"
     assert object.requirement == "test"
     assert object.responsibility == "test"
+
+
+def test_VacancyHHRU_invalid_id(some_vacancy_dict):
+    some_vacancy_dict["id"] = 1
+    with pytest.raises(TypeError):
+        VacancyHHRU(some_vacancy_dict)
+    some_vacancy_dict["id"] = None
+    with pytest.raises(ValueError):
+        VacancyHHRU(some_vacancy_dict)
 
 
 def test_VacancyHHRU_invalid_name(some_vacancy_dict):
@@ -66,11 +74,13 @@ def test_VacancyHHRU_invalid_salary(some_vacancy_dict):
     with pytest.raises(TypeError):
         VacancyHHRU(some_vacancy_dict)
 
+
 def test_VacancyHHRU_invalid_url(some_vacancy_dict):
 
     some_vacancy_dict["alternate_url"] = "htp//hh.ru"
     with pytest.raises(ValueError):
         VacancyHHRU(some_vacancy_dict)
+
 
 def test_VacancyHHRU_invalid_snippet(some_vacancy_dict):
 
@@ -88,46 +98,47 @@ def test_VacancyHHRU_invalid_snippet(some_vacancy_dict):
     with pytest.raises(ValueError):
         VacancyHHRU(some_vacancy_dict)
 
+
 def test_vacancy_math_funcs():
-    object_1 = VacancyHHRU({
-        "name": "test",
-        "salary": {
-            "from": 1,
-            "to": 2,
-            "currency": "test",
-        },
-        "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        },
-    })
-    object_2 = VacancyHHRU({
-        "name": "test",
-        "salary": {
-            "from": 1,
-            "to": 3,
-            "currency": "test",
-        },
-        "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        },
-    })
-    object_3 = VacancyHHRU({
-        "name": "test",
-        "salary": {
-            "from": 3,
-            "to": 5,
-            "currency": "test",
-        },
-        "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        },
-    })
+    object_1 = VacancyHHRU(
+        {
+            "id": "1",
+            "name": "test",
+            "salary": {
+                "from": 1,
+                "to": 2,
+                "currency": "test",
+            },
+            "alternate_url": "https://test.ru",
+            "snippet": {"requirement": "test", "responsibility": "test"},
+        }
+    )
+    object_2 = VacancyHHRU(
+        {
+            "id": "1",
+            "name": "test",
+            "salary": {
+                "from": 1,
+                "to": 3,
+                "currency": "test",
+            },
+            "alternate_url": "https://test.ru",
+            "snippet": {"requirement": "test", "responsibility": "test"},
+        }
+    )
+    object_3 = VacancyHHRU(
+        {
+            "id": "1",
+            "name": "test",
+            "salary": {
+                "from": 3,
+                "to": 5,
+                "currency": "test",
+            },
+            "alternate_url": "https://test.ru",
+            "snippet": {"requirement": "test", "responsibility": "test"},
+        }
+    )
 
     assert object_1 <= object_2
     assert object_1 < object_3
