@@ -26,7 +26,7 @@ class FileWorker(ABC):
         pass
 
     @abstractmethod
-    def del_data(self):
+    def del_vacancy(self, id):
         pass
 
 
@@ -135,5 +135,19 @@ class FileWorkerJson(FileWorker):
         else:
             print("Create file!")
 
-    def del_data(self):
-        pass
+    def del_vacancy(self, id):
+        """Метод для удаления вакансии из файла по ID"""
+
+        for vacancy in self.__vacancy_data:
+            if vacancy["id"] == id:
+                self.__vacancy_data.remove(vacancy)
+                self.__id_list.remove(id)
+                with open(self.__path_to_file, "w", encoding="utf-8") as file:
+                    json.dump(self.__vacancy_data, file, indent=4, ensure_ascii=False)
+
+    def get_top_n(self, n:int) -> list:
+        """Метод для предоставления топ объектов по зарплате"""
+
+        sorted_vacancy_list = sorted(self.__vacancy_data, key=lambda x: x["salary"]["from"], reverse=True)
+
+        return sorted_vacancy_list[0:(n+1)]

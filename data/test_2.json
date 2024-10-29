@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1",
+        "name": "test",
+        "salary": {
+            "from": 1,
+            "to": 2,
+            "currency": "ANT"
+        },
+        "alternate_url": "https://test.ru",
+        "snippet": {
+            "requirement": "test",
+            "responsibility": "test"
+        }
+    }
+]

@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d965dd76-9ed6-41bb-9e08-fb8e3078d411" name="Changes" comment="исправления с режимом доступа у метода __connecnt_HHRU">
-      <change afterPath="$PROJECT_DIR$/tests/test_API_system.py" afterDir="false" />
+    <list default="true" id="d965dd76-9ed6-41bb-9e08-fb8e3078d411" name="Changes" comment="lints fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_system.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/filework.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/filework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_filework.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_filework.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,36 +30,39 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Psyduck-duck"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Psyduck-duck&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Psyduck-duck/Course_Project_2.git",
-    "accountId": "128b2693-3a30-4ff2-8be2-7172a8e7bcb0"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Psyduck-duck/Course_Project_2.git&quot;,
+    &quot;accountId&quot;: &quot;128b2693-3a30-4ff2-8be2-7172a8e7bcb0&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2nnOTuDteaZuejnKqC3ZVxLR7J7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.test_API_system.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/homework",
-    "last_opened_file_path": "C:/Users/Anton/Desktop/PycharmProjects/Course_Project_2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.nothing.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_API_system.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_filework.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_vacancies.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/homework&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Anton/Desktop/PycharmProjects/Course_Project_2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Anton\Desktop\PycharmProjects\Course_Project_2" />
@@ -129,7 +132,87 @@
       <option name="project" value="LOCAL" />
       <updated>1729681571910</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Рабочая версия классов с API">
+      <option name="closed" value="true" />
+      <created>1729689475699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729689475699</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Пробная финальная версия класса VacancyHHRU">
+      <option name="closed" value="true" />
+      <created>1729790661921</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1729790661921</updated>
+    </task>
+    <task id="LOCAL-00009" summary="создан тест-файл для vancancies">
+      <option name="closed" value="true" />
+      <created>1729865486084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1729865486084</updated>
+    </task>
+    <task id="LOCAL-00010" summary="написаны тесты для класса VacancyHHRU">
+      <option name="closed" value="true" />
+      <created>1729870342426</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729870342426</updated>
+    </task>
+    <task id="LOCAL-00011" summary="исрпавления для валидации валюты">
+      <option name="closed" value="true" />
+      <created>1729870403416</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729870403416</updated>
+    </task>
+    <task id="LOCAL-00012" summary="создание модуля filework.py">
+      <option name="closed" value="true" />
+      <created>1729874492090</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1729874492090</updated>
+    </task>
+    <task id="LOCAL-00013" summary="промежуточный результат">
+      <option name="closed" value="true" />
+      <created>1729878441097</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729878441097</updated>
+    </task>
+    <task id="LOCAL-00014" summary="промежуточный результат">
+      <option name="closed" value="true" />
+      <created>1729962831227</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1729962831227</updated>
+    </task>
+    <task id="LOCAL-00015" summary="добавлен метод get_data. Метод ищет ключевые слова в вакансиях">
+      <option name="closed" value="true" />
+      <created>1730139667710</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139667710</updated>
+    </task>
+    <task id="LOCAL-00016" summary="lints fixes">
+      <option name="closed" value="true" />
+      <created>1730139711588</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1730139711588</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -138,6 +221,15 @@
     <MESSAGE value="Create abs class for API" />
     <MESSAGE value="Пробная сборка ApiConnectionHHRU" />
     <MESSAGE value="исправления с режимом доступа у метода __connecnt_HHRU" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправления с режимом доступа у метода __connecnt_HHRU" />
+    <MESSAGE value="Рабочая версия классов с API" />
+    <MESSAGE value="Пробная финальная версия класса VacancyHHRU" />
+    <MESSAGE value="создан тест-файл для vancancies" />
+    <MESSAGE value="написаны тесты для класса VacancyHHRU" />
+    <MESSAGE value="исрпавления для валидации валюты" />
+    <MESSAGE value="создание модуля filework.py" />
+    <MESSAGE value="промежуточный результат" />
+    <MESSAGE value="добавлен метод get_data. Метод ищет ключевые слова в вакансиях" />
+    <MESSAGE value="lints fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="lints fixes" />
   </component>
 </project>
