@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d965dd76-9ed6-41bb-9e08-fb8e3078d411" name="Changes" comment="Добавлена функция для взаимодействия с пользоватлем">
+    <list default="true" id="d965dd76-9ed6-41bb-9e08-fb8e3078d411" name="Changes" comment="Финальная рабочая версия проекта">
       <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/API_system.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/API_system.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/filework.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/filework.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vacancies.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/vacancies.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/work_with_user.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/work_with_user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_vacancies.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_vacancies.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +226,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730222966776</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Финальная рабочая версия проекта">
+      <option name="closed" value="true" />
+      <created>1730300558189</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730300558189</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,6 +254,7 @@
     <MESSAGE value="lints fixes" />
     <MESSAGE value="Рабочая версия всех классов" />
     <MESSAGE value="Добавлена функция для взаимодействия с пользоватлем" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена функция для взаимодействия с пользоватлем" />
+    <MESSAGE value="Финальная рабочая версия проекта" />
+    <option name="LAST_COMMIT_MESSAGE" value="Финальная рабочая версия проекта" />
   </component>
 </project>
