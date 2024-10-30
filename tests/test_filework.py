@@ -112,14 +112,14 @@ def test_FileWorkerJson_get_data():
             "salary": {"from": 1, "to": 2, "currency": "test"},
             "alternate_url": "https://test.ru",
             "snippet": {"requirement": "test", "responsibility": "test"},
-        }
+        },
     ]
 
 
 def test_FileWorkerJson_del_vacancy():
     object = FileWorkerJson("test_2.json")
     object.del_vacancy("2")
-    object.del_vacancy("4")    #Проверка на несуществующий ID
+    object.del_vacancy("4")  # Проверка на несуществующий ID
     with open(os.path.join(PATH_TO_DATA_DIRECTORY, "test_2.json")) as file:
         data = json.load(file)
         assert data == [
@@ -139,44 +139,23 @@ def test_FileWorkerJson_get_top_n():
     assert result[0] == {
         "id": "4",
         "name": "test",
-        "salary": {
-            "from": 99,
-            "to": 100,
-            "currency": "test"
-        },
+        "salary": {"from": 99, "to": 100, "currency": "test"},
         "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        }
+        "snippet": {"requirement": "test", "responsibility": "test"},
     }
     assert result[1] == {
         "id": "2",
         "name": "test",
-        "salary": {
-            "from": 10,
-            "to": 100,
-            "currency": "test"
-        },
+        "salary": {"from": 10, "to": 100, "currency": "test"},
         "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        }
+        "snippet": {"requirement": "test", "responsibility": "test"},
     }
     assert result[2] == {
         "id": "3",
         "name": "test",
-        "salary": {
-            "from": 5,
-            "to": 100,
-            "currency": "test"
-        },
+        "salary": {"from": 5, "to": 100, "currency": "test"},
         "alternate_url": "https://test.ru",
-        "snippet": {
-            "requirement": "test",
-            "responsibility": "test"
-        }
+        "snippet": {"requirement": "test", "responsibility": "test"},
     }
 
     with pytest.raises(IndexError):

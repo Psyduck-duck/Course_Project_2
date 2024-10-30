@@ -1,7 +1,3 @@
-from src.API_system import ApiConnectionHHRU
+from src.work_with_user import work_with_user
 
-
-example = ApiConnectionHHRU()
-data = example.get_vacancy_data("Python", 1)
-for i in data:
-    print(i)
+work_with_user()

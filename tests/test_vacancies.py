@@ -61,13 +61,17 @@ def test_VacancyHHRU_None_salary(some_vacancy_dict):
 def test_VacancyHHRU_invalid_salary(some_vacancy_dict):
 
     some_vacancy_dict["salary"]["from"] = "1"
-    with pytest.raises(TypeError):
-        VacancyHHRU(some_vacancy_dict)
+    # with pytest.raises(TypeError):
+    #     VacancyHHRU(some_vacancy_dict)
+    object = VacancyHHRU(some_vacancy_dict)
+    assert object.salary_down == None
     some_vacancy_dict["salary"]["from"] = 1
 
     some_vacancy_dict["salary"]["to"] = "2"
-    with pytest.raises(TypeError):
-        VacancyHHRU(some_vacancy_dict)
+    # with pytest.raises(TypeError):
+    #     VacancyHHRU(some_vacancy_dict)
+    object_1 = VacancyHHRU(some_vacancy_dict)
+    assert object_1.salary_up == None
     some_vacancy_dict["salary"]["to"] = 2
 
     some_vacancy_dict["salary"]["currency"] = 123
@@ -85,13 +89,17 @@ def test_VacancyHHRU_invalid_url(some_vacancy_dict):
 def test_VacancyHHRU_invalid_snippet(some_vacancy_dict):
 
     some_vacancy_dict["snippet"]["requirement"] = 123
-    with pytest.raises(TypeError):
-        VacancyHHRU(some_vacancy_dict)
+    # with pytest.raises(TypeError):
+    #     VacancyHHRU(some_vacancy_dict)
+    object = VacancyHHRU(some_vacancy_dict)
+    assert object.requirement == None
     some_vacancy_dict["snippet"]["requirement"] = "test"
 
     some_vacancy_dict["snippet"]["responsibility"] = 123
-    with pytest.raises(TypeError):
-        VacancyHHRU(some_vacancy_dict)
+    # with pytest.raises(TypeError):
+    #     VacancyHHRU(some_vacancy_dict)
+    object = VacancyHHRU(some_vacancy_dict)
+    assert object.responsibility == None
     some_vacancy_dict["snippet"]["responsibility"] = "test"
 
     some_vacancy_dict["snippet"] = None

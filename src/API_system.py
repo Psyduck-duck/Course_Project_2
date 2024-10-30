@@ -7,17 +7,17 @@ class ApiConnection(ABC):
     """Абстрактный класс для работы с api ресурсами"""
 
     @abstractmethod
-    def __init__(self):
+    def __init__(self) -> None:
         """Коструктор для определения основных параметров"""
         pass
 
     @abstractmethod
-    def connect(self):
+    def connect(self) -> None:
         """Метод для определения подключения к сервисам"""
         pass
 
     @abstractmethod
-    def get_vacancy_data(self, search_text: str):
+    def get_vacancy_data(self, search_text: str) -> None:
         """Метод для получения информации по вакансиям"""
         pass
 
@@ -25,7 +25,9 @@ class ApiConnection(ABC):
 class ApiConnectionHHRU(ApiConnection):
     """Класс для работы с API сервисами HH.ru"""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Конструктор для определения ключевых параметров для работы с API"""
+
         self.__url = "https://api.hh.ru/vacancies"
         self.__headers = {
             "text": None,
@@ -39,10 +41,10 @@ class ApiConnectionHHRU(ApiConnection):
         self.__vacancies = []
         self.__is_connecting = False
 
-    def connect(self):
+    def connect(self) -> None:
         pass
 
-    def __connect_HHRU(self):
+    def __connect_HHRU(self) -> None:
         """метод для определения установки связи c API HH.ru"""
         response = requests.get("https://api.hh.ru", self.__headers)
         if response.status_code != 200:

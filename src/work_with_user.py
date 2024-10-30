@@ -1,9 +1,11 @@
 from src.API_system import ApiConnectionHHRU
-from src.vacancies import VacancyHHRU
 from src.filework import FileWorkerJson
+from src.vacancies import VacancyHHRU
 
 
 def work_with_user():
+    """Функция для взаимодействия с пользотелем"""
+
     print("Добро пожаловать в поисковую систему по вакансиям с HH.ru")
     print()
     search_name = input("Введите ваш запрос: ")
@@ -11,7 +13,9 @@ def work_with_user():
     vacancies_list = api_object.get_vacancy_data(search_name, 100)
     vacancies_objects_list = [VacancyHHRU(vacancy) for vacancy in vacancies_list]
     filename = search_name.replace(" ", "_")
-    fileworker_object = FileWorkerJson(filename)
+    fileworker_object = FileWorkerJson(f"{filename}.json")
+    if not fileworker_object.is_file():
+        fileworker_object.create_file()
     for x in vacancies_objects_list:
         fileworker_object.add_data(x)
 
@@ -47,5 +51,3 @@ def work_with_user():
             pass
         else:
             print("Ваш ответ не ясен")
-
-
