@@ -1,0 +1,58 @@
+[
+    {
+        "id": "1",
+        "name": "test",
+        "salary": {
+            "from": 1,
+            "to": 100,
+            "currency": "test"
+        },
+        "alternate_url": "https://test.ru",
+        "snippet": {
+            "requirement": "test",
+            "responsibility": "test"
+        }
+    },
+    {
+        "id": "2",
+        "name": "test",
+        "salary": {
+            "from": 10,
+            "to": 100,
+            "currency": "test"
+        },
+        "alternate_url": "https://test.ru",
+        "snippet": {
+            "requirement": "test",
+            "responsibility": "test"
+        }
+    },
+    {
+        "id": "3",
+        "name": "test",
+        "salary": {
+            "from": 5,
+            "to": 100,
+            "currency": "test"
+        },
+        "alternate_url": "https://test.ru",
+        "snippet": {
+            "requirement": "test",
+            "responsibility": "test"
+        }
+    },
+    {
+        "id": "4",
+        "name": "test",
+        "salary": {
+            "from": 99,
+            "to": 100,
+            "currency": "test"
+        },
+        "alternate_url": "https://test.ru",
+        "snippet": {
+            "requirement": "test",
+            "responsibility": "test"
+        }
+    }
+]
